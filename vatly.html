@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MathVerse - Khám phá thế giới toán học kỳ diệu. Cung cấp kiến thức toán học từ cơ bản đến nâng cao, lý thuyết và công thức.">
+    <title>TALK TO AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .math {
+            margin-top: 7rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .math h1 {
+            margin: 0;
+            font-size: 5rem;
+        }
+
+        .math i {
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        .contentx {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        h2 {
+            color: rgb(0, 0, 0);
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.9rem;
+        }
+
+        ul {
+            font-size: 2rem;
+        }
+        li {
+            font-size: 2rem;
+        }
+
+        .formula {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 1rem solid #ad1737;
+            font-size: 2rem;
+        }
+        .formula2 {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 1rem solid #000000;
+            font-size: 2rem;
+        }
+
+        /* Hiệu ứng trượt cho phần văn bản */
+        .content-hidden {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-size: 1.5rem;
+            color: #000000;
+        }
+
+        .show {
+            display: block;
+            animation: slide-down 0.5s ease-out;
+        }
+
+        @keyframes slide-down {
+            from {
+                max-height: 0;
+                opacity: 0;
+            }
+            to {
+                max-height: 1000px;
+                opacity: 1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="gradient-background2"></div>
+    <a href="study.html">
+        <button class="button2">
+            <div class="button2-box">
+                <span class="button2-elem">
+                    <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                    </svg>
+                </span>
+                <span class="button2-elem">
+                    <svg viewBox="0 0 46 40">
+                        <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                    </svg>
+                </span>
+            </div>
+        </button>
+    </a>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="logo1.png" alt="Logo" class="logo-img">
+            <span class="logo-text">EduAI</span>
+        </a>
+        <a href="https://capable-longma-d5c490.netlify.app/ai">
+          <button class="cssbuttons-io-button">
+              Trò chuyện với EduAI
+              <div class="iconx">
+                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                  </svg>
+              </div>
+          </button>
+      </a>
+        <a href="study.html">
+            <button class="cssbuttons-io-button">
+              Học tập
+              <div class="iconx">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            
+          </a>
+            <a href="news_synthesis.html"> <button class="button3">
+                <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+                <span class="button3-text">Tin Tức</span>
+             </button></a>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <header class="math">
+        <h1>VẬT LÝ</h1>
+        <p><i>“Có thể Chúa tồn tại, nhưng khoa học có thể giải thích về vũ trụ mà không cần tới một đấng sáng tạo."</i></p>
+        <p><i>-Stephen Hawking-</i></p>
+    </header>
+
+    <div class="contentx">
+        <h2>Giới thiệu</h2>
+        <p>
+            Trang này sẽ cung cấp các kiến thức vật lý từ cơ bản đến nâng cao. Bao gồm các lý thuyết và các công thức. Ngoài ra còn chia sẻ một số những kiến thức kỳ diệu về vật lý, những lý thuyết định hình thế giới của chúng ta.
+        </p>
+
+        <!-- Liên kết đến công thức tính lực hấp dẫn 2 vật -->
+        <div class="formula">
+            <a href="javascript:void(0)" onclick="toggleVisibility('cthuc1')"><h2>Công thức tính lực hấp dẫn 2 vật tác dụng lên nhau</h2></a>
+        </div>
+
+        <!-- Phần văn bản bị ẩn, sẽ hiển thị khi bấm vào -->
+        <div id="cthuc1" class="content-hidden">
+            <p>
+                Với việc phát hiện ra Định luật vạn vật hấp dẫn, Sir Issac Newton đã thực sự mở mang cách hiểu biết của con người về thế giới. Và Newton cũng đã cho ra công thức toán học để tính lực hấp dẫn mà 2 vật tác dụng lên nhau, công thức đó như sau:
+            </p>
+            <div class="formula2">\[ Fhd= G
+                \frac{m1.m2}{r^2}
+                \]
+                <img src="https://vietjack.com/tai-lieu-mon-ly/images/cong-thuc-tinh-luc-hap-dan-ctqt10-61388.png" alt="Pythagorean Theorem" style="width: 42rem; height: auto; margin-top: 1rem;"></div>
+            <p>Trong đó:</p>
+            <p>
+                <li>\(Fhd\): Lực hấp dẫn 2 vật tác dụng lên nhau.</li>
+                <li>\(G\): Hằng số hấp dẫn=6,67.10<sup>-11</sup>, có thể thay đổi ở các trường hợp khác nhau. Đơn vị: Nm<sup>2</sup>/kg<sup>2</sup>.</li>
+                <li>\(m1, m2\): Khối lượng của 2 vật 1,2. Đơn vị: kg.</li>
+                <li>\(r\): Khoảng cách giữa 2 vật</li>
+            </p>
+        </div>
+
+        <!-- Các liên kết và công thức khác -->
+        <div class="formula">
+            <a href="javascript:void(0)" onclick="toggleVisibility('cthuc2')"><h2>Công thức tính lực hấp trái đất tác dụng lên vật</h2></a>
+        </div>
+        <div id="cthuc2" class="content-hidden">
+            <p>
+                Với công thức đã biết ở trên, ta có thể dễ dàng suy ra công thức tính trọng lực mà trái đất tác dụng lên vật như sau:
+            </p>
+            <div class="formula2">\[ P= G
+                \frac{m.M}{(R+h)^2}
+                \]
+                <img src="https://hoangvina.com/wp-content/uploads/2022/03/luc-hap-dan-5.jpg" style="width: 42rem; height: auto; margin-top: 1rem;"></div>
+            <p>Trong đó:</p>
+            <p>
+                <li>\(P\): Lực hấp dẫn trái đất tác dụng lên vật.</li>
+                <li>\(G\): Hằng số hấp dẫn=6,67.10<sup>-11</sup>, có thể thay đổi ở các trường hợp khác nhau. Đơn vị: Nm<sup>2</sup>/kg<sup>2</sup>.</li>
+                <li>\(m, M\): Khối lượng của vật và của trái đất. Đơn vị: kg.</li>
+                <li>\(R, h\): R là bán kính của trái đất, h là chiều cao của vật so với mặt đất. Đơn vị: mét</li>
+            </p>
+        </div>
+        
+        <div class="formula">
+            <a href="javascript:void(0)" onclick="toggleVisibility('cthuc3')"><h2>Bản chất của lực hấp dẫn là gì?</h2></a>
+        </div>
+        <div id="cthuc3" class="content-hidden">
+            <p>
+                Mặc dù đã phát hiện ra được định luật vạn vật hấp dẫn, nhưng khi đó Newton vẫn chưa giải thích được kỹ càng và hợp lý về bản chất của lực hấp dẫn. Mãi cho đến những năm đầu thế kỷ 20, nhà vật lý học lỗi lạc Albert Einstein đã giải thích được bản chất của lực hấp dẫn qua Thuyết tương đối.
+            </p>
+            <div class="formula2">
+                <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/streams/2013/January/130110/1B5480339-bill-m--fink29E9BA14-301B-D462-DF3C-3C746AB5EB22.jpg" alt="Pythagorean Theorem" style="width: 42rem; height: auto; margin-top: 0rem; margin-left: 32%;">
+                <ul>Theo đó: Einstein cho rằng thế giới mà ta đang sống là 1 không-thời gian 4 chiều, với 3 chiều không gian và 1 chiều thời gian. Ông tưởng tượng không-thời gian này như 1 mặt phẳng, ở trên mặt phẳng đó là các vật thể có khối lượng và chúng sẽ làm bề mặt của tấm phẳng bị lõm xuống, tạo thành các hố và từ đó hút các vật khác lại gần.
+                Dựa trên điều đó, ta có thể thấy rằng: Lực hấp dẫn là sự biến dạng của không-thời gian mà ta đang sống, và vật có khối lượng càng lớn thì hút các vật khác càng mạnh. Hơn thế nữa, như đã nói ở trên, trọng lượng bẻ cong không-thời gian, vì vậy trọng lượng ngoài làm biến dạng không gian và hút các vật, nó cũng đồng thời làm biến dạng, làm giãn nở thời gian, làm cho thời gian xung quanh trường hấp dẫn của vật thể có khối lượng nặng trôi
+                chậm hơn so với thời gian xung quanh trường hấp dẫn của 1 vật khác có khối lượng nhẹ hơn, đây là 1 hệ quả được suy ra từ Thuyết tương đối của Einstein. Ngoài ra, không thời gian 4 chiều còn có hình ảnh thực tế và chính xác hơn như sau:
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRElO3nmSTk9unzh7fwYfeJLH-a9o11Q6Y6NUr78s_XfL4VuknPRYX9G1MlLhUDOkk9BzU&usqp=CAU" alt="Pythagorean Theorem" style="width: 42rem; height: auto; margin-top: 0rem;margin-left: 32%;">
+                </ul>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // Hàm để hiển thị/ẩn phần văn bản
+        function toggleVisibility(id) {
+            var content = document.getElementById(id);
+            content.classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>

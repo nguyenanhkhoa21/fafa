@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduAI</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        height: 100%;
+      }
+      .chat-container {
+        display: flex;
+        height: 100%;
+      }
+      .main-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .chat-messages {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background-color: #f9f9f9;
+      }
+      .input-area {
+        padding: 20px;
+        border-top: 1px solid #e0e0e0;
+        background-color: #ffffff;
+      }
+      .new-chat-btn,
+      .chat-item {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+        border: 1px solid #d0d0d0;
+        border-radius: 5px;
+        text-align: left;
+        cursor: pointer;
+      }
+      .message {
+        max-width: 70%;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .user-message {
+        background-color: #007bff;
+        color: white;
+        margin-left: auto;
+      }
+      .assistant-message {
+        background-color: #f0f0f0;
+      }
+      .input-form {
+        display: flex;
+      }
+      .message-input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #d0d0d0;
+        border-radius: 5px;
+      }
+      .send-btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .sidebar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="main-content">
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="input-area">
+          <form class="input-form" id="chatForm">
+            <input
+              type="text"
+              class="message-input"
+              id="messageInput"
+              placeholder="Type your message here..."
+              autocomplete="off"
+            />
+            <button type="submit" class="send-btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function base64Decode(input) {
+        const base64Chars =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        let byteArray = [];
+        let padding = input.endsWith("==") ? 2 : input.endsWith("=") ? 1 : 0;
+
+        input = input.slice(0, input.length - padding);
+
+        for (let i = 0; i < input.length; i += 4) {
+          let char1 = base64Chars.indexOf(input.charAt(i));
+          let char2 = base64Chars.indexOf(input.charAt(i + 1));
+          let char3 = base64Chars.indexOf(input.charAt(i + 2));
+          let char4 = base64Chars.indexOf(input.charAt(i + 3));
+
+          let combined = (char1 << 18) | (char2 << 12) | (char3 << 6) | char4;
+
+          byteArray.push((combined >> 16) & 0xff);
+          byteArray.push((combined >> 8) & 0xff);
+          byteArray.push(combined & 0xff);
+        }
+
+        byteArray = byteArray.slice(0, byteArray.length - padding);
+
+        let output = "";
+        for (let i = 0; i < byteArray.length; i++) {
+          output += String.fromCharCode(byteArray[i]);
+        }
+
+        return output;
+      }
+
+      const apiUrl = "https://api.openai.com/v1/chat/completions";
+      const sigmaskbidi =
+        "c2stcHJvai0wZzVabGJvRlBmclJvQzM2RF96ZjhQTk1ob1dTU3N2YXMtenlUYkliZG5LUExMdVBScXdxUk94RUpuUFB6aDViQUlQQTVYYmhqSFQzQmxia0ZKTVRpcGhaWVJOazNxbHhBLS1pRld6NDE4RmQyQzVPd1lWTVQ3aFFWTFZsMGF2VHJPNmdLV2tweVVfNy1kQnVDc20yMGlPbExaZ0E=";
+      const chatForm = document.getElementById("chatForm");
+      const messageInput = document.getElementById("messageInput");
+      const chatMessages = document.getElementById("chatMessages");
+
+      let messages = [
+        {
+          role: "system",
+          content:
+            "Bạn là một chatbot học tập giúp giải quyết các vấn đề kiến thức về các môn học, và đồng thời hỗ trợ tâm lý học sinh. Nhiệm vụ của bạn là đưa ra những câu trả lời chính xác nhất về các vấn đề người dùng hỏi, những lời khuyên hỗ trợ tâm lý bọn họ và Hãy đảm bảo trả về nội dung là plaintext thay vì markdown.",
+        },
+      ];
+
+      function initializeChat() {
+        const initialMessage =
+          "Xin chào! Bạn muốn trò chuyện với tôi về vấn đề gì?";
+        addMessageToChat("assistant", initialMessage);
+        messages.push({ role: "assistant", content: initialMessage });
+      }
+
+      chatForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const userMessage = messageInput.value.trim();
+        if (!userMessage) {
+          alert("Please enter a message!");
+          return;
+        }
+
+        addMessageToChat("user", userMessage);
+        messages.push({ role: "user", content: userMessage });
+
+        messageInput.value = "";
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${base64Decode(sigmaskbidi)}`,
+            },
+            body: JSON.stringify({
+              model: "gpt-4o-mini",
+              messages: messages,
+            }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const assistantMessage =
+            data.choices[0]?.message?.content || "No response from assistant.";
+
+          addMessageToChat("assistant", assistantMessage);
+          messages.push({ role: "assistant", content: assistantMessage });
+        } catch (error) {
+          addMessageToChat("error", "Error: " + error.message);
+        }
+      });
+
+      function addMessageToChat(role, content) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message");
+
+        if (role === "user") {
+          messageDiv.classList.add("user-message");
+          messageDiv.textContent = content;
+        } else if (role === "assistant") {
+          messageDiv.classList.add("assistant-message");
+          messageDiv.textContent = content;
+        } else if (role === "error") {
+          messageDiv.classList.add("error-message");
+          messageDiv.textContent = content;
+        }
+
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      initializeChat();
+    </script>
+  </body>
+</html>

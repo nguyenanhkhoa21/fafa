@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALK TO AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f0f0f0;
+      }
+      .header2 {
+          margin-top:9rem ;
+          background-color: #0e7091cf;
+          color: #6f088c;
+          padding: 20px;
+          text-align: center;
+      }
+      main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          max-width: 800px;
+          margin: auto;
+      }
+      p {
+          text-align: justify;
+          padding: 15px;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+          line-height: 1.6;
+          font-size: 1.65rem;
+      }
+      figure {
+          margin: 20px 0;
+          width: 100%;
+      }
+      img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+      }
+      figcaption {
+          font-size: 14px;
+          color: #666;
+          padding: 10px;
+          text-align: center;
+      }
+      h1 {
+          font-size: 24px;
+          margin-bottom: 20px;
+      }
+      h6 {
+          font-size: 12px;
+          color: #666;
+          text-align: center;
+          margin-top: 20px;
+      }
+      /* Định dạng cho phần Nguồn */
+.source {
+  font-size: 14px;
+  color: #cd0d0d; /* Màu chữ cho phần 'Nguồn:' */
+}
+
+/* Định dạng cho tên nguồn VNEXPRESS */
+.source-name {
+  font-size: 14px;
+  color: #290db4; /* Màu chữ cho VNEXPRESS */
+  font-weight: bold; /* Làm đậm tên nguồn */
+}
+
+  </style>
+  </head>
+  <body>
+    <a href="news_synthesis.html">
+      <button class="button2">
+          <div class="button2-box">
+              <span class="button2-elem">
+                  <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                  </svg>
+              </span>
+              <span class="button2-elem">
+                  <svg viewBox="0 0 46 40">
+                      <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                  </svg>
+              </span>
+          </div>
+      </button>
+  </a>
+    <header class="header">
+      <a href="index.html" class="logo">
+          <img src="logo1.png" alt="Logo" class="logo-img">
+          <span class="logo-text">EduAI</span>
+      </a>
+      <a href="https://capable-longma-d5c490.netlify.app/ai">
+        <button class="cssbuttons-io-button">
+            Trò chuyện với EduAI
+            <div class="iconx">
+                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </button>
+    </a>
+      <a href="study.html">
+          <button class="cssbuttons-io-button">
+            Học tập
+            <div class="iconx">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+          
+        </a>
+          <a href="news_synthesis.html"> <button class="button3">
+              <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+              <span class="button3-text">Tin Tức</span>
+           </button></a>
+      <div id="menu-btn" class="fas fa-bars"></div>
+  </header >
+    <header class="header2">
+      <h1>Những đứa trẻ tìm nơi 'thú tội'</h1>
+    </header>
+    <main>
+      <p>
+        Khi có vấn đề về tâm lý, một số trẻ nhờ các trang Confession tìm người cho ý kiến hơn là trực tiếp tâm sự với cha mẹ, thầy cô.
+      </p>
+      <p>
+        Tôi có một thắc mắc, đó là Tại sao những đứa trẻ bị những vấn đề về tâm lý lại không tìm đến "Tư vấn tâm lý học đường" ở trường? Đầu tiên, chúng ta cần được hiểu khái niệm "Tư vấn tâm lý học đường" là gì?
+      </p>
+        <img src="https://admin.tamlyvietphap.vn/uploaded/Images/Original/2019/09/21/fCw3jxSbtvboduo5s9XuOCepgQQpXyMY_2109090925.jpg" alt="">
+      <p>
+        Theo một trang web về giáo dục định nghĩa, thì "Tư vấn tâm lý học đường là hoạt động hỗ trợ cho học sinh, sinh viên, giáo viên và các bậc phụ huynh. Việc thực hiện tư vấn tâm lý này sẽ giúp các học sinh, sinh viên gặp những khó khăn trong quá trình học tập, các mối quan hệ trong trường học cảm thấy cuộc sống trở nên tốt đẹp hơn".
+      </p>
+      <p>
+        Trang web này cũng đưa ra nhiều số liệu về tình trạng tâm lý học đường hiện nay như "Theo kết quả khảo sát khám sức khỏe định kỳ cho trẻ ở lứa tuổi THCS tại Hà Nội mới đây cho thấy có đến 25,7% trên tổng số 1.727 học sinh mắc phải các chứng bệnh tâm thần. Đặc biệt là tỷ lệ các em nữ giới lại mắc bệnh nhiều hơn nam giới. Cũng theo khảo sát này có tới 20,6% các em học sinh đang học lớp một thường lo lắng quá nhiều về kết quả học tập gây ra bệnh trầm cảm".
+      </p>
+      <p>Vậy thì, điều gì và lí do tại sao các em lại ít tìm tới tư vấn tâm lý học đường ở trường như vậy?</p>
+      <p>
+        Trong bài viết có đề cập đến quy trình giải quyết vấn đề bao gồm bảy bước, trong đó có việc thiết lập mối quan hệ.
+      </p>
+      <p>
+        Tất nhiên, khi ta mở lòng chia sẻ với ai đó thì người đó trước hết phải mang cho ta cảm giác tin tưởng trước đã. Đa số ở trường cấp hai, cấp ba người phụ trách tư vấn tâm lý học đường sẽ là thầy cô nào đó chứ không phải một bác sĩ tâm lý ở ngoài.
+      </p>
+      <p>
+        Cái quan trọng ở đây chính ta sự tin tưởng. Không có sự tin tưởng cũng sẽ không có các bước sau. Thường khi nói ra câu chuyện của mình thì các em rất sợ bị người thứ ba biết. Huống chi đây là môi trường học đường. Tiếp nữa là chuyên môn của giáo viên, nếu được đi học hay có nghiên cứu tài liệu thì chắc chắn sẽ làm học sinh tin tưởng và chia sẻ hơn rất nhiều.
+      </p>
+      <p>
+        Nhưng, đáng buồn thay bây giờ các em học sinh ưa chuộng mạng xã hội hơn. Ưa chuộng những trang Confession (tạm dịch: thú tội) giấu danh tính. Tin tưởng vào các tài khoản ảo mà các em lập nên hơn.
+      </p>
+      <p>
+        Đơn cử, tối hôm qua, tôi dễ dàng tìm thấy được các bài đăng về những vấn đề tâm lý của các em. Chỉ đơn giản là các em muốn nói ra, muốn được mọi người cho ý kiến. Đôi khi người thì phán bệnh này, kẻ thì phán bệnh kia, vài ba người thì buông ra lời cợt nhả. Các em càng mông lung về tình trạng của mình hơn.
+      </p>
+        <h4 class="crename">NGUYỄN NGỌC YẾN</h4>
+      <h6>
+        <p class="source">Nguồn: <span class="source-name">VNEXPRESS</span></p>
+      </h6>
+    </main>
+  </body>
+</html>

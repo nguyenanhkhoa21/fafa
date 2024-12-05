@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MathVerse - Khám phá thế giới toán học kỳ diệu. Cung cấp kiến thức toán học từ cơ bản đến nâng cao, lý thuyết và công thức.">
+    <title>TALK TO AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .math {
+            margin-top: 7rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .math h1 {
+            margin: 0;
+            font-size: 5rem;
+        }
+
+        .math i {
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        .contentx {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        h2 {
+            color: rgb(0, 0, 0);
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.9rem;
+        }
+
+        ul {
+            font-size: 2rem;
+        }
+
+        .formula {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 1rem solid #ad1737;
+            font-size: 2rem;
+        }
+        .formula2 {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 0.3rem solid #000000;
+            font-size: 2rem;
+        }
+
+        /* Hiệu ứng trượt cho phần văn bản */
+        .content-hidden {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-size: 1.5rem;
+            color: #000000;
+        }
+
+        .show {
+            display: block;
+            animation: slide-down 0.5s ease-out;
+        }
+
+        @keyframes slide-down {
+            from {
+                max-height: 0;
+                opacity: 0;
+            }
+            to {
+                max-height: 1000px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-background2"></div>
+    <a href="study.html">
+        <button class="button2">
+            <div class="button2-box">
+                <span class="button2-elem">
+                    <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                    </svg>
+                </span>
+                <span class="button2-elem">
+                    <svg viewBox="0 0 46 40">
+                        <path d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"></path>
+                    </svg>
+                </span>
+            </div>
+        </button>
+    </a>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="logo1.png" alt="Logo" class="logo-img">
+            <span class="logo-text">EduAI</span>
+        </a>
+        <a href="https://capable-longma-d5c490.netlify.app/ai">
+          <button class="cssbuttons-io-button">
+              Trò chuyện với EduAI
+              <div class="iconx">
+                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                  </svg>
+              </div>
+          </button>
+      </a>
+        <a href="study.html">
+            <button class="cssbuttons-io-button">
+              Học tập
+              <div class="iconx">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            
+          </a>
+            <a href="news_synthesis.html"> <button class="button3">
+                <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+                <span class="button3-text">Tin Tức</span>
+             </button></a>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <header class="math">
+        <h1>TIẾNG ANH</h1>
+        <p><i>"Speak English, Speak Your Future!"</i></p>
+        <p><i>-Pineah Maximus-</i></p>
+    </header>
+
+    <div class="contentx">
+        <h2>Giới thiệu</h2>
+        <p>
+            Trang này sẽ cung cấp các kiến thức tiếng Anh từ cơ bản đến nâng cao. Bao gồm các lý thuyết và các kiến thức thông dụng về tiếng Anh.
+        </p>
+
+        <!-- Liên kết đến công thức tính lực hấp dẫn 2 vật -->
+        <div class="formula">
+            <a href="javascript:void(0)" onclick="toggleVisibility('cthuc1')"><h2>Các Idioms và Collocations thông dụng</h2></a>
+        </div>
+        <!-- Phần văn bản bị ẩn, sẽ hiển thị khi bấm vào -->
+        <div id="cthuc1" class="content-hidden">
+            <p>
+                Idioms và Collocations trong tiếng Anh là 2 phần kiến thức vô cùng thú vị và cần thiết, đặc biệt là trong giao tiếp hằng ngày, nhưng để thuộc được chúng thì không đơn giản chút nào. Nếu bạn muốn nâng cao trình độ tiếng Anh của mình, thì những Idioms và Collocations dưới đây sẽ giúp bạn rất nhiều đấy!
+            </p>
+            <div class="formula2">
+                <p>Danh sách dưới đây chứa các thành ngữ và cụm từ thông dụng trong tiếng Anh giúp bạn cải thiện kỹ năng ngôn ngữ của mình:</p>
+        <ul>
+            <li><b>Break the ice:</b> Tạo sự thoải mái, bắt đầu một cuộc trò chuyện<br><i>Example: "He told a joke to break the ice at the party."</i></li>
+            <li><b>Hit the nail on the head:</b> Nói chính xác, đúng vấn đề<br><i>Example: "You really hit the nail on the head with your analysis."</i></li>
+            <li><b>Under the weather:</b> Cảm thấy không khỏe<br><i>Example: "I'm feeling a bit under the weather today, so I’m staying home."</i></li>
+            <li><b>A piece of cake:</b> Một việc rất dễ dàng<br><i>Example: "The test was a piece of cake for me."</i></li>
+            <li><b>Burn the midnight oil:</b> Làm việc khuya, thức đêm để làm việc<br><i>Example: "She had to burn the midnight oil to finish her report."</i></li>
+            <li><b>Let the cat out of the bag:</b> Làm lộ bí mật<br><i>Example: "I accidentally let the cat out of the bag about the surprise party."</i></li>
+            <li><b>Jump the gun:</b> Hành động quá vội vàng<br><i>Example: "Don’t jump the gun! Wait for all the facts first."</i></li>
+            <li><b>Pull someone's leg:</b> Trêu đùa ai đó<br><i>Example: "Stop pulling my leg, I know you're joking!"</i></li>
+            <li><b>Go the extra mile:</b> Cố gắng hết sức<br><i>Example: "He always goes the extra mile to help others."</i></li>
+            <li><b>Cut to the chase:</b> Đi thẳng vào vấn đề<br><i>Example: "Let's cut to the chase and talk about the main issue."</i></li>
+            <li><b>Back to the drawing board:</b> Bắt đầu lại từ đầu<br><i>Example: "Our first plan didn’t work, so it's back to the drawing board."</i></li>
+            <li><b>At the drop of a hat:</b> Ngay lập tức, không chần chừ<br><i>Example: "She’s ready to go at the drop of a hat."</i></li>
+            <li><b>On the ball:</b> Nhanh nhẹn, tinh tường<br><i>Example: "He’s always on the ball when it comes to new technology."</i></li>
+            <li><b>Jump to conclusions:</b> Vội vàng kết luận<br><i>Example: "Don’t jump to conclusions, wait until you have all the facts."</i></li>
+            <li><b>Burn bridges:</b> Đánh mất cơ hội, gây tổn hại mối quan hệ<br><i>Example: "He burned his bridges with the company when he quit without notice."</i></li>
+            <li><b>On cloud nine:</b> Vui mừng, hạnh phúc<br><i>Example: "She was on cloud nine after hearing the good news."</i></li>
+            <li><b>Back to the drawing board:</b> Quay lại từ đầu sau khi thất bại<br><i>Example: "The design didn’t work, so it’s back to the drawing board."</i></li>
+    <li><b>Bite the dust:</b> Thất bại hoặc bị tiêu diệt<br><i>Example: "Unfortunately, the old computer finally bit the dust."</i></li>
+    <li><b>Cross that bridge when you come to it:</b> Đối mặt với vấn đề khi nó xuất hiện<br><i>Example: "We don't know if we'll need extra help, so let's cross that bridge when we come to it."</i></li>
+    <li><b>Hit the ground running:</b> Bắt đầu một công việc ngay lập tức và đầy năng lượng<br><i>Example: "After the orientation, she hit the ground running with her new project."</i></li>
+    <li><b>Jump on the bandwagon:</b> Tham gia vào một xu hướng phổ biến<br><i>Example: "Many people jumped on the bandwagon of healthy eating this year."</i></li>
+    <li><b>Let sleeping dogs lie:</b> Đừng làm dấy lên những vấn đề cũ<br><i>Example: "Let's just let sleeping dogs lie and not bring up the argument from last week."</i></li>
+    <li><b>Once in a blue moon:</b> Một điều gì đó xảy ra rất hiếm khi<br><i>Example: "We only get to see them once in a blue moon."</i></li>
+    <li><b>A leopard can't change its spots:</b> Một người không thể thay đổi bản chất của mình<br><i>Example: "He promised to be more organized, but a leopard can't change its spots."</i></li>
+    <li><b>Keep your fingers crossed:</b> Hy vọng một kết quả tốt đẹp<br><i>Example: "I’m keeping my fingers crossed for a promotion."</i></li>
+</ul>
+        </ul>
+        </div>
+    </div>
+    <div class="formula">
+        <a href="javascript:void(0)" onclick="toggleVisibility('cthuc2')"><h2>Những từ viết tắt thông dụng trong tiếng Anh</h2></a>
+    </div>
+    <div id="cthuc2" class="content-hidden">
+        <p>
+            Khi bạn nhắn tin, nghe nhạc hoặc giao tiếp thường ngày bằng tiếng Anh, thi thoảng bạn sẽ gặp 1 số từ viết tắt. Để bạn có thể hiểu được chúng, dưới đây là 1 số những từ viết tắt tiếng Anh hay được sử dụng:
+        </p>
+        <div class="formula2">
+            <ul>
+                <li><b>OMG:</b> Oh my God (ngạc nhiên, kinh ngạc, choáng ngợp)<br><i>Example: "OMG, look at the lion!"</i></li>
+                <li><b>LOL:</b> Laugh Out Loud (Cười to thường dùng khi thấy điều gì đó hài hước)<br><i>Example: "That joke was so funny, LOL!"</i></li>
+                <li><b>BTW:</b> By The Way (Nhân tiện, tiện thể, dùng để thêm thông tin bổ sung trong câu chuyện)<br><i>Example: " BTW, I heard she’s moving to another city."</i></li>
+                <li><b>IDK:</b> I don't know (tôi không biết)<br><i>Example: "IDK what happened to my book."</i></li>
+                <li><b>AKA:</b> Also Known As (Còn được gọi là)<br><i>Example: "Iron Man, AKA Tony Stark, is my favorite superhero."</i></li>
+                <li><b>RIP:</b> Rest In Peace (Nghỉ ngơi trong bình an, thường được dùng khi ai đó qua đời, nhưng cũng có thể được dùng một cách hài hước)<br><i>Example: "RIP to my phone screen, it’s totally shattered."</i></li>
+                <li><b>Gonna:</b> Going to (Sẽ, định làm gì)<br><i>Example: " I'm gonna call you later"</i></li>
+                <li><b>Dunno:</b> Don't Know (Không biết)<br><i>Example: " I dunno what happened."</i></li>
+                <li><b>Wassup:</b> What's up? (Có chuyện gì vậy? thường là 1 câu chào hỏi)<br><i>Example: "Wassup, bro? "</i></li>
+                <li><b>Pls:</b> Please (Làm ơn)<br><i>Example: " Pls send me the link."</i></li>
+                <li><b>Ur:</b> Your (Của bạn)<br><i>Example: "Can you give me ur pen?"</i></li>
+                <li><b>Ain't:</b>  Isn't / Am not / Are not (Không phải, không có)<br><i>Example: "I ain't got time for that"</i></li>
+                <li><b>Wanna:</b> Want to (Muốn)<br><i>Example: "I wanna meet her"</i></li>
+                <li><b>Tryna</b> Trying to (Đang cố làm gì đó)<br><i>Example: "She’s tryna finish her homework."</i></li>
+                <li><b>Gotta:</b> Got to (phải, cần phải)<br><i>Example: "Sorry, I gotta go."</i></li>
+            </ul>
+            </div>
+        </div>
+    <script>
+        // Hàm để hiển thị/ẩn phần văn bản
+        function toggleVisibility(id) {
+            var content = document.getElementById(id);
+            content.classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
